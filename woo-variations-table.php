@@ -335,6 +335,13 @@ function variations_table_print_table(){
                 var imageURL = '<?php echo $productImageURL; ?>';
                 var activeColumns = <?php echo $activeColumns; ?>;
                 var showAttributes = <?php echo $showAttributes; ?>;
+
+                var descriptionLabel = '<?php _e('Description', 'woo-variations-table'); ?>';
+                var skuLabel = '<?php _e('SKU', 'woo-variations-table'); ?>';
+                var weightLabel = '<?php _e('Weight', 'woo-variations-table'); ?>';
+                var dimensionsLabel = '<?php _e('Dimensions', 'woo-variations-table'); ?>';
+                var priceLabel = '<?php _e('Price', 'woo-variations-table'); ?>';
+
                 // bootstrap the grid
                 var vm = new Vue({
                   el: '#variations',
@@ -342,11 +349,11 @@ function variations_table_print_table(){
                     searchQuery: '',
                     gridColumns: [
                         {key: 'image_link', title: '', type: 'image'},
-                        {key: 'sku', title: 'SKU', type: 'text'},
-                        {key: 'variation_description', title: 'Description', type: 'html'},
-                        {key: 'weight_html', title: 'Weight', type: 'text'},
-                        {key: 'dimensions', title: 'Dimensions', type: 'text'},
-                        {key: 'price_html', title: 'Price', type: 'html'}
+                        {key: 'sku', title: skuLabel, type: 'text'},
+                        {key: 'variation_description', title: descriptionLabel, type: 'html'},
+                        {key: 'weight_html', title: weightLabel, type: 'text'},
+                        {key: 'dimensions', title: dimensionsLabel, type: 'text'},
+                        {key: 'price_html', title: priceLabel, type: 'html'}
                     ],
                     activeColumns: activeColumns,
                     gridData: variations,
